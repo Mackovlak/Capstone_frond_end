@@ -34,10 +34,10 @@ export const HomePage = () => {
   }, []);
   return (
     <>
-      <section className="relative w-full h-screen bg-cover bg-center bg-[url('/bg_hero.jpg')] bg-fixed" >
+      <section className="relative w-full h-screen bg-cover bg-center bg-[url('/bg_hero.jpg')] bg-fixed">
         <div className="absolute inset-0 bg-black/50 z-0"></div>
         <div className="relative  flex flex-col justify-center items-start h-full px-6 md:px-20 text-white space-y-6">
-          <h1 className='text-5xl md:text-7xl font-bold max-w-xl'>Luminou§kin</h1>
+          <h1 className="text-5xl md:text-7xl font-bold max-w-xl">Luminou§kin</h1>
           <h2 className="text-4xl md:text-5xl font-bold max-w-xl">Accessible Healthcare for Every Community</h2>
           <p className="text-lg md:text-xl max-w-lg">Connecting rural areas with professional medical solutions through advanced technology and compassionate care.</p>
           <div className="flex gap-5">
@@ -58,7 +58,9 @@ export const HomePage = () => {
             <path d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z" />
           </svg>
           <blockquote>
-            <p className="text-2xl italic font-medium text-gray-900 dark:text-white">"Pelayanan kesehatan adalah hak - bukan hak istimewa. Kami menggunakan tekhnologi untuk memberikan diagnosis dan edukasi ke setiap desa, pulau, dan keluarga di indonesia"</p>
+            <p className="text-2xl italic font-medium text-gray-900 dark:text-white">
+              "Pelayanan kesehatan adalah hak - bukan hak istimewa. Kami menggunakan tekhnologi untuk memberikan diagnosis dan edukasi ke setiap desa, pulau, dan keluarga di indonesia"
+            </p>
           </blockquote>
         </div>
       </section>
@@ -80,11 +82,11 @@ export const HomePage = () => {
           </Card>
           <Card className="feature-card flex flex-col justify-between hover:bg-linear-to-r from-cyan-200 to-blue-200">
             <CardHeader className={'flex flex-col items-center justify-center'}>
-              <Bandage className='h-10 w-10'></Bandage>
+              <Bandage className="h-10 w-10"></Bandage>
               <CardTitle className={'text-4xl text-center font-quicksand'}>Saran Pengobatan </CardTitle>
             </CardHeader>
             <CardContent>
-              <CardTitle className={'font-light text-2xl text-center font-quicksand'}>Cari Tahu Obat yang kamu butuhkan untuk penyembuhan  </CardTitle>
+              <CardTitle className={'font-light text-2xl text-center font-quicksand'}>Cari Tahu Obat yang kamu butuhkan untuk penyembuhan </CardTitle>
             </CardContent>
             <CardFooter className={'flex justify-center'}>
               <Button variant="outline">Try Out</Button>
@@ -92,7 +94,7 @@ export const HomePage = () => {
           </Card>
           <Card className="feature-card flex flex-col justify-between hover:bg-linear-to-r from-cyan-200 to-blue-200">
             <CardHeader className={'flex flex-col items-center justify-center'}>
-              <Map className='h-10 w-10'></Map>
+              <Map className="h-10 w-10"></Map>
               <CardTitle className={'text-4xl text-center font-quicksand'}>Pelayanan Terdekat </CardTitle>
             </CardHeader>
             <CardContent>
@@ -104,7 +106,7 @@ export const HomePage = () => {
           </Card>
           <Card className="feature-card flex flex-col justify-between hover:bg-linear-to-r from-cyan-200 to-blue-200">
             <CardHeader className={'flex flex-col items-center justify-center'}>
-              <Book className='h-10 w-10'></Book>
+              <Book className="h-10 w-10"></Book>
               <CardTitle className={'text-4xl text-center font-quicksand'}>Edukasi Kesehatan </CardTitle>
             </CardHeader>
             <CardContent>
@@ -114,7 +116,6 @@ export const HomePage = () => {
               <Button variant="outline">Try Out</Button>
             </CardFooter>
           </Card>
-
         </div>
       </section>
       <HorizontalScrollSection />
@@ -214,7 +215,6 @@ export const HomePage = () => {
           <p className='text-center'>@2025 Luminou§kin - All Right reserved</p>
         </div>
       </section>
-
     </>
-  )
-}
+  );
+};
