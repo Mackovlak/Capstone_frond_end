@@ -10,11 +10,34 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Link } from "react-router"
+import { useNavigate } from "react-router"
+
+import ApiRequest from "@/api"
 
 export function LoginForm({
   className,
   ...props
 }) {
+
+  //handle login - miku21
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    try {
+      const res = await ApiRequest.post("/api/login", {email, password})
+      localStorage.setItem("token", res.data.token);
+      alert("Login Successfull")
+      /**
+       * TODO : GIVE BELOW THIS CODE TO DASHBOARD
+       */
+
+      //end
+    } catch (error) {
+      alert(error.response?.data?.msg || "Login failed");
+    }
+  }
   return (
     <div className={cn("flex flex-col gap-6 items-center justify-center h-screen", className)} {...props}>
       <Card>
@@ -25,7 +48,7 @@ export function LoginForm({
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <form>
+          <form onSubmit={handleLogin}>
             <div className="flex flex-col gap-6">
               <div className="grid gap-3">
                 <Label htmlFor="email">Email</Label>
@@ -69,6 +92,30 @@ export function RegisterForm({
   className,
   ...props
 }) {
+  const navigate = useNavigate();
+
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const age = e.target.age.value;
+    // const address = e.target.address.value;
+    // const username = e.target.username.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    try {
+      const res = await ApiRequest.post("/api/register",{
+        name,
+        age,
+        email,
+        password
+      });
+      alert("Registration successful! You can now log in.");
+      navigate("/login");
+    } catch (error) {
+      alert(error.response?.data?.msg || "Registration failed");
+    }
+  }
   return (
     <div className={cn("flex flex-col gap-6 items-center justify-center h-screen", className)} {...props}>
       <Card>
@@ -79,7 +126,7 @@ export function RegisterForm({
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <form>
+          <form onSubmit={handleRegister}>
             <div className="flex flex-col gap-6">
               <div className="grid gap-3">
                 <Label htmlFor="email">Name</Label>
